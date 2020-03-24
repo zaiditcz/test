@@ -15,5 +15,3 @@ console.log( config.env );
 console.log('=================Port===================');
 
 export default app;
-// comment
-// nodemon --exec babel-node new.js
