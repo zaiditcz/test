@@ -1,7 +1,7 @@
 import config from "./config/env";
 import app from './config/express';
 
-if (config.env === "development") {
+if (config.env === "test") {
     app.listen(process.env.PORT || config.port, () => console.log(`Server Started On Port ${config.port} (${config.env})`));
 } else {
     // listen on port config.port
