@@ -8,7 +8,7 @@ const defaults = {
 };
 
 console.log('\n=================Path===================');
-console.log( path.join(__dirname, "./") );
+console.log( require(`./${env}`) );
 console.log('=================Path===================\n');
 
 export default Object.assign(defaults, config);
