@@ -3,7 +3,7 @@ import babel from 'gulp-babel';
 import path from 'path';
 import uglify from 'gulp-uglify';
 import gulpLoadPlugins from 'gulp-load-plugins';
-// import del from 'del';
+import del from 'del';
 
 const plugins = gulpLoadPlugins();
 
@@ -12,7 +12,7 @@ const paths = {
   nonJs: ['./package.json', '!dist'],
 };
 
-// export const clean = () => del(['dist/**', '!dist']);
+export const clean = () => del(['dist/**', '!dist']);
 
 export const compile = () => {
   return gulp
@@ -38,8 +38,8 @@ export const nodemon = () =>
     })
     .on('restart', gulp.series(compile, copy));
 
-export const serve = gulp.series( gulp.parallel(copy, compile), nodemon);
+export const serve = gulp.series(clean, gulp.parallel(copy, compile), nodemon);
 
-const build = gulp.series( gulp.parallel(copy, compile));
+const build = gulp.series(clean, gulp.parallel(copy, compile));
 
 export default build;
