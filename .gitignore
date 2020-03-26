@@ -1,4 +1,9 @@
-node_modules
+# Version Code
 .vscode
+
+# Optimised Folder
 dist
+
+# Dependency directory
+node_modules
 package-lock.json
